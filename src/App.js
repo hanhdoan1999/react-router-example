@@ -12,7 +12,8 @@ import ListQuestion from './views/ListQuestion';
 import DetailQuestion from './views/DetailQuestion'
 import Login from './views/Login';
 import ListSurvay from './views/ListSurvay';
-import UpdateQuestion from './views/UpdateQuestion'
+import UpdateQuestion from './views/UpdateQuestion';
+import {Authentication} from './views/Authentication';
 
 import DoSurvay from './views/DoSurvay';
 
@@ -24,7 +25,8 @@ function App() {
            {/* <Route exact path='/admin' render={() => {
              return localStorage.getItem("accessToken") ? <ListQuestion/> : <Redirect to='/'/>
            }}/> */}
-           <Route exact path='/' component = {Login} />
+           <Route exact path='/' component = {Authentication} />
+           <Route exact path='/login' component={Login}/>
            <PrivateRoute exact path='/admin/add-user'>
            <AddUser/>
            </PrivateRoute>

@@ -12,7 +12,7 @@ function UpdateQuestion() {
     const {id} = useParams();
 
     const survays = useSelector(state => state.questionReducer)
-    const survay = survays.filter(el => el.id === id.toString())
+    const survay = survays.filter(el => el.id == id)
     console.log(survay);
 
 
@@ -125,9 +125,8 @@ function UpdateQuestion() {
                         <Row>
                             <Col>
                             <InputGroup>
-                                <InputGroup.Radio   name="group1" defaultChecked/>
+                                <InputGroup.Radio   name="group1" />
                                 <FormControl  required type="text" placeholder="Lựa chọn 1" value={option1} onChange={handleChangeOption1} />
-
                             </InputGroup>
                             </Col>
                             <Col>

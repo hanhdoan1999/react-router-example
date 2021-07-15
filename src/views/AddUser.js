@@ -61,9 +61,9 @@ function AddUser() {
   }
 
     return (
-      <>
-        <Container fluid className="bg">
+        <div className="bg">
         <Header/>
+        <div className="form-wrap">
           <div className = "addForm">
             <div className="formHeader">
                 <div className="d-flex">
@@ -74,7 +74,7 @@ function AddUser() {
                 </div>
             </div>
             <div className="formContent">
-              <h3>Thêm mới người sử dụng</h3>
+              <h5>Thêm mới người sử dụng</h5>
             <Form onSubmit={handleAddUser}>
               <Form.Group className="mb-3">
                 <Form.Label>Họ tên</Form.Label>
@@ -109,9 +109,9 @@ function AddUser() {
               </Button>
             </Form>
             </div>
+            </div>
           </div>
-        </Container>
-      </>
+        </div>
     )
 }
 

@@ -9,6 +9,7 @@ const DEFAULT_STATE = [
         53301,
         9180,
       ],
+      "trueOption" : 9180,
       "img": "https://picsum.photos/200",
       "advise": "Qui soluta possimus voluptas.\nQuaerat iure quis et commodi nesciunt cum iure.\nMolestias quo maxime ut.\nTenetur in ea quia quod repellendus quae.\nAutem officiis aliquid.",
       "id": "1"
@@ -18,13 +19,13 @@ const DEFAULT_STATE = [
       "group": "Nhóm 2",
       "content": "Amet fuga harum exercitationem pariatur et soluta. Ut quaerat voluptates voluptatem in cupiditate natus ut. Voluptas placeat illum iusto.",
       "options": [
-
         42803,
         51349,
         12942,
         93520,
         20113
       ],
+      "trueOption" : 20113,
       "img": "https://picsum.photos/200",
       "advise": "Cum exercitationem eum iste voluptatem.\nEt eos id voluptas nisi sit qui quae ipsam.",
       "id": "2"
@@ -39,6 +40,7 @@ const DEFAULT_STATE = [
         98287,
         25686
       ],
+      "trueOption" : 25686,
       "img": "https://picsum.photos/200",
       "advise": "Cum voluptatem et deserunt tempore ducimus et quos similique et.\nEnim qui illo deserunt et sunt.\nAlias perspiciatis omnis aut deserunt.\nVeritatis reprehenderit repellendus velit maxime beatae voluptas non error reprehenderit.",
       "id": "3"

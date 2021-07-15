@@ -20,8 +20,7 @@ function Login() {
     }
 
     return (
-        <>
-        <Container fluid className="bg">
+        <div className="bg">
         <Header/>
             <div className="form-wrap">
             <div className = "addForm">
@@ -41,9 +40,7 @@ function Login() {
               </Form>
           </div>
             </div>
-        </Container>
-            
-        </>
+        </div>
     )
 }
 

@@ -8,7 +8,7 @@ function DetailQuestion() {
      
     const {id} = useParams();
     const survays = useSelector(state => state.questionReducer)
-    const survay = survays.filter(el => el.id === id.toString())
+    const survay = survays.filter(el => el.id == id)
 
     const history = useHistory();
  
@@ -26,7 +26,7 @@ function DetailQuestion() {
                 {survay[0].options.filter(item => item !=="").map((s,index) =>
                   
                 <Form.Check key={index}>
-                    <Form.Check.Input type='radio' isValid name="group1"/>
+                    <Form.Check.Input type='radio' name="group1"/>
                     <Form.Check.Label>{s}</Form.Check.Label>
                 </Form.Check>
                 )}   

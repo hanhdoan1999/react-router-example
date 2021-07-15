@@ -10,7 +10,7 @@ function DoSurvay() {
     const {id} = useParams();
     console.log(id);
     const survays = useSelector(state => state.questionReducer)
-    const survay = survays.filter(el => el.id === id.toString())
+    const survay = survays.filter(el => el.id == id)
     console.log(survay);
 
     
@@ -26,7 +26,6 @@ function DoSurvay() {
             <Form>
             <Form.Group>
                 {survay[0].options.map((s,index) =>
-                  
                 <Form.Check key={index}>
                     <Form.Check.Input type='radio' isValid name="group1"/>
                     <Form.Check.Label>{s}</Form.Check.Label>

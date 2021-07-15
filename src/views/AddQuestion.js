@@ -19,6 +19,7 @@ function AddQuestion() {
     const [options,setOptions] = useState([]);
     const [img,setImg] = useState('');
     const [advise,setAdvise] = useState('');
+    const [trueOption,setTrueOption] = useState(option1);
 
     const [validated, setValidated] = useState(false);
 
@@ -38,14 +39,17 @@ function AddQuestion() {
     }
 
     const handleChangeOption2 = (e) => {
+        e.preventDefault();
         setOption2(e.target.value)
     }
 
     const handleChangeOption3 = (e) => {
+        e.preventDefault();
         setOption3(e.target.value)
     }
 
     const handleChangeOption4 = (e) => {
+        e.preventDefault();
         setOption4(e.target.value)
     }
 
@@ -57,10 +61,14 @@ function AddQuestion() {
         setAdvise(e.target.value)
     }
 
+    const handleOptionChange = (e) => {
+        e.preventDefault();
+        setTrueOption(e.target.value) 
+    }
+
 
 
     const resetForm = () => {
-        // setGroup(groupQuestions[0]);
         setContent('');
         setOption1('');
         setOption2('');
@@ -72,7 +80,7 @@ function AddQuestion() {
     }
 
     const handleAddQuestion = (event) => {
-        // event.preventDefault();
+     event.preventDefault();
      const form = event.currentTarget;
      console.log(form);
      if (form.checkValidity() === false) {
@@ -86,11 +94,12 @@ function AddQuestion() {
             "group": group,
             "content": content,
             "options": options,
+            "trueOption":trueOption,
             "img": img,
             "advise": advise
             
         }})
-        console.log("add-question", group, content, options, img ,advise);
+        console.log("add-question", trueOption, group, content, options, img ,advise);
         setValidated(true);        
         resetForm();
         alert('Thêm mới thành công !');
@@ -118,14 +127,13 @@ function AddQuestion() {
                         <Row>
                             <Col>
                             <InputGroup>
-                                <InputGroup.Radio   name="group1" defaultChecked/>
+                                <InputGroup.Radio name="group1"  value={option1} checked={trueOption === option1}  onChange={handleOptionChange} />
                                 <FormControl  required type="text" placeholder="Lựa chọn 1" value={option1} onChange={handleChangeOption1} />
-
                             </InputGroup>
                             </Col>
                             <Col>
                             <InputGroup>
-                                <InputGroup.Radio   name="group1" />
+                                <InputGroup.Radio name="group1" value={option2} checked={ trueOption === option2}  onChange={handleOptionChange}/>
                                 <FormControl  required type="text" placeholder="Lựa chọn 2" value={option2} onChange={handleChangeOption2}/>
                             </InputGroup>
                             </Col>
@@ -133,13 +141,13 @@ function AddQuestion() {
                         <Row className="mt-3">
                             <Col>
                             <InputGroup>
-                                <InputGroup.Radio   name="group1" />
+                                <InputGroup.Radio name="group1" value={option3} checked={ trueOption === option3}  onChange={handleOptionChange}/>
                                 <FormControl  type="text" placeholder="Lựa chọn 3" value={option3} onChange={handleChangeOption3}/>
                             </InputGroup>
                             </Col>
                             <Col>
                             <InputGroup>
-                                <InputGroup.Radio   name="group1" />
+                                <InputGroup.Radio name="group1" value={option4} checked={ trueOption === option4}  onChange={handleOptionChange}/>
                                 <FormControl  type="text" placeholder="Lựa chọn 4" value={option4} onChange={handleChangeOption4}/>
                             </InputGroup>
                             </Col>
@@ -164,15 +172,12 @@ function AddQuestion() {
                         </Form.Control.Feedback>
                     </Form.Group> 
                     <Form.Group >
-
                             <Button onClick={resetForm} variant="outline-primary" type="button">
                                 Xóa
                             </Button>
-
-                            <Button className="ml-3"  variant="primary" type="submit">
+                            <Button className="ml-3" variant="primary" type="submit">
                                 Đăng kí
                             </Button>
-
                     </Form.Group>                       
                 </Form>
             </div>

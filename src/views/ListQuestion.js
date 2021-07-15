@@ -26,20 +26,19 @@ function ListQuestion() {
 
     return (
      <>   
-        <Container fluid>
         <Header/>
         <div className="d-flex justify-content-end">
             <Link to='/admin/add-question' className="btn btn-primary m-3">Thêm câu hỏi</Link>
         </div>
-    
-        <Table  bordered > 
-        {/* striped hover */}
+        <div className="m-3">      
+        <Table bordered> 
             <thead className="text-center">
                 <tr>
                 <th>STT</th>
                 <th>Nhóm</th>
                 <th>Nội dung</th>
                 <th>Lựa chọn</th>
+                <th>Đáp án</th>
                 {/* <th>Khuyến Cáo</th> */}
                 <th colSpan="3">Thao tác</th>
                 </tr>
@@ -50,7 +49,8 @@ function ListQuestion() {
                                 <td>{index + 1}</td>
                                 <td>{q.group}</td>
                                 <td style={{maxWidth: 250}}>{q.content}</td>
-                                <td>{q.options.map((el,index) => <span className="d-block" key={index}>{el}</span>)}</td>                             
+                                <td>{q.options.map((el,index) => <span className="d-block" key={index}>{el}</span>)}</td> 
+                                <td>{q.trueOption}</td>                            
                                 {/* <td>{q.advise}</td> */}
                                 <td className="text-center align-middle"><Link to={`/admin/list-question/${q.id}`}><FaExpandAlt/></Link></td>
                                 <td className="text-center align-middle"><Link to={`/admin/list-question/edit/${q.id}`}><FaRegEdit/></Link></td>
@@ -60,7 +60,7 @@ function ListQuestion() {
 
             </tbody>
         </Table>
-        </Container>
+        </div>
     </>
     )
 }
