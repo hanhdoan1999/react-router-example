@@ -164,18 +164,15 @@ function AddQuestion() {
                         </Form.Control.Feedback>
                     </Form.Group> 
                     <Form.Group >
-                        <Row>
-                            <Col>
+
                             <Button onClick={resetForm} variant="outline-primary" type="button">
                                 Xóa
                             </Button>
-                            </Col>
-                            <Col>
-                            <Button  variant="primary" type="submit">
+
+                            <Button className="ml-3"  variant="primary" type="submit">
                                 Đăng kí
                             </Button>
-                            </Col>
-                        </Row>
+
                     </Form.Group>                       
                 </Form>
             </div>

@@ -37,7 +37,6 @@ const DEFAULT_STATE = [
         88549,
         62460,
         98287,
-
         25686
       ],
       "img": "https://picsum.photos/200",
@@ -56,7 +55,17 @@ const DEFAULT_STATE = [
               console.log('DELETE_QUESTION',state);
               return state.filter(el => el.id !== action.payload)
           case 'UPDATE_QUESTION':
-            //   return [...state, action.payload]
+            console.log("update-question" ,action.payload);
+            const question = {
+            // "id": action.payload.id,
+            "group": action.payload.group,
+            "content": action.payload.content,
+            "options": action.payoad.options,
+            "img": action.payoad.img,
+            "advise": action.payoad.advise
+            }
+            console.log(question);
+            return state.map(el => el.id === action.payload.id ?  Object.assign(el,question) :el )
           default:
               return state;
       }

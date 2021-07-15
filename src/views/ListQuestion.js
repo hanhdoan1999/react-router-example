@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector,useDispatch} from 'react-redux';
-import {Table, Container,Button} from 'react-bootstrap';
+import {Table, Container} from 'react-bootstrap';
 import Header from './Header';
 import { FaRegTrashAlt,FaRegEdit,FaExpandAlt } from "react-icons/fa";
 import {Link} from 'react-router-dom'
@@ -14,9 +14,9 @@ function ListQuestion() {
 
 
 
-    const handleUpdateQuestion = (user) => {
-        console.log('handleUpdateQuestion',user);
-    }
+    // const handleUpdateQuestion = (user) => {
+    //     console.log('handleUpdateQuestion',user);
+    // }
 
     const handleDeleteQuestion = (user) => {
         dispatch({type:'DELETE_QUESTION',payload:user.id})

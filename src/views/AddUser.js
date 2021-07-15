@@ -10,8 +10,8 @@ import { useHistory } from "react-router-dom";
 function AddUser() {
 
   const [password2,setPassword2] = useState('');
-  const [organizations,setOrganizations] = useState(['Công ty A','Công ty B','Công ty C'])
-  const [roles,setRoles] = useState(['Nhân Viên','Trưởng Phòng','Bảo vệ']);
+  const [organizations] = useState(['Công ty A','Công ty B','Công ty C'])
+  const [roles] = useState(['Nhân Viên','Trưởng Phòng','Bảo vệ']);
 
   const users = useSelector(state => state.userReducer)
   const dispatch = useDispatch()

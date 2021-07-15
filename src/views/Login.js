@@ -13,7 +13,7 @@ function Login() {
     const handleLogin = () =>{
         if(useName==="admin" && password==="admin"){
             localStorage.setItem("accessToken",true)
-            history.push('/admin')
+            history.push('/admin/list-question')
         }
         console.log(useName,password);
      
@@ -22,23 +22,25 @@ function Login() {
     return (
         <>
         <Container fluid className="bg">
-            <Header/>
-          <div className = "addForm">
-              <h2>Login</h2>
+        <Header/>
+            <div className="form-wrap">
+            <div className = "addForm">
+              <h2 className="text-center">Login</h2>
               <Form>
                   <Form.Group>
-                      <Form.Label>User</Form.Label>
-                      <Form.Control type="text" value={useName} onChange={e => setUserName(e.target.value)}></Form.Control>
+                      <Form.Label>UserName</Form.Label>
+                      <Form.Control placeholder="User Name" type="text" value={useName} onChange={e => setUserName(e.target.value)}></Form.Control>
                   </Form.Group>
                   <Form.Group>
                       <Form.Label>Password</Form.Label>
-                      <Form.Control type="password" value={password} onChange={e => setPassWord(e.target.value)}></Form.Control>
+                      <Form.Control placeholder="PassWord" type="password" value={password} onChange={e => setPassWord(e.target.value)}></Form.Control>
                   </Form.Group>
-                  <Button variant="primary" type="button" onClick = {handleLogin}>
+                  <Button  className="btn-block mb-3" variant="primary" type="button" onClick = {handleLogin}>
                         Submit
                   </Button>
               </Form>
           </div>
+            </div>
         </Container>
             
         </>

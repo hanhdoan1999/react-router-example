@@ -1,8 +1,8 @@
 import React from 'react'
 import Header from './Header'
 import {useParams} from 'react-router-dom';
-import {useSelector, useDispatch} from 'react-redux';
-import {Form,Button, Row, Col} from 'react-bootstrap'
+import {useSelector} from 'react-redux';
+import {Form,Button} from 'react-bootstrap'
 
 function DoSurvay() {
     
@@ -10,7 +10,7 @@ function DoSurvay() {
     const {id} = useParams();
     console.log(id);
     const survays = useSelector(state => state.questionReducer)
-    const survay = survays.filter(el => el.id == id)
+    const survay = survays.filter(el => el.id === id.toString())
     console.log(survay);
 
     
