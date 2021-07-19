@@ -1,9 +1,10 @@
 import React from 'react';
 import {useSelector,useDispatch} from 'react-redux';
-import {Table, Container} from 'react-bootstrap';
+import {Table} from 'react-bootstrap';
 import Header from './Header';
 import { FaRegTrashAlt,FaRegEdit,FaExpandAlt } from "react-icons/fa";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import {actDeleteQuestion} from '../redux/actions/index'
 
 
 
@@ -12,26 +13,20 @@ function ListQuestion() {
         const dispatch = useDispatch();
         console.log(questions);
 
-
-
-    // const handleUpdateQuestion = (user) => {
-    //     console.log('handleUpdateQuestion',user);
-    // }
-
     const handleDeleteQuestion = (user) => {
-        dispatch({type:'DELETE_QUESTION',payload:user.id})
-        console.log('handleDeleteQuestion',user);
+        dispatch(actDeleteQuestion(user.id))
+
     }
 
 
     return (
-     <>   
+     <div>   
         <Header/>
+        <div className="mx-3 my-4 px-4 pb-2 bg-white rounded shadow " > 
         <div className="d-flex justify-content-end">
-            <Link to='/admin/add-question' className="btn btn-primary m-3">Thêm câu hỏi</Link>
+            <Link to='/admin/add-question' className="btn  btn-sm btn-primary m-3">Thêm câu hỏi</Link>
         </div>
-        <div className="m-3">      
-        <Table bordered> 
+        <Table className="table table-hover" responsive > 
             <thead className="text-center">
                 <tr>
                 <th>STT</th>
@@ -49,7 +44,7 @@ function ListQuestion() {
                                 <td>{index + 1}</td>
                                 <td>{q.group}</td>
                                 <td style={{maxWidth: 250}}>{q.content}</td>
-                                <td>{q.options.map((el,index) => <span className="d-block" key={index}>{el}</span>)}</td> 
+                                <td>{q.options.map((el,index) =><span className="d-block" key={index}>{index+1}. {el}</span>)}</td> 
                                 <td>{q.trueOption}</td>                            
                                 {/* <td>{q.advise}</td> */}
                                 <td className="text-center align-middle"><Link to={`/admin/list-question/${q.id}`}><FaExpandAlt/></Link></td>
@@ -57,11 +52,10 @@ function ListQuestion() {
                                 <td className="text-center align-middle"><FaRegTrashAlt className="icon" onClick={() => handleDeleteQuestion(q)}/></td>
                                 </tr>
                 )}
-
             </tbody>
         </Table>
         </div>
-    </>
+    </div>
     )
 }
 

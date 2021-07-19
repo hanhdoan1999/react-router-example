@@ -13,7 +13,7 @@ function ListSurvay() {
      <>   
         <Container fluid>
         <Header/>
-        <Table striped bordered hover>
+        <Table striped bordered hover responsive>
             <thead>
                 <tr>
                 <th>STT</th>
